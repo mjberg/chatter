@@ -1,13 +1,17 @@
 class RegistrationsController < Devise::RegistrationsController
 
-  protected
+  private
 
   def after_sign_up_path_for(resource)
-    messages_path
+    "/messages"
   end
 
   def after_sign_in_path_for(resource)
-  messages_path
-end
+     '/messages'
+  end
+
+  def after_inactive_sign_up_path_for(resource)
+    "/messages"
+  end
 
 end
